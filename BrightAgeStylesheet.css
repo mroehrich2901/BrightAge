@@ -1,0 +1,36 @@
+.root{
+    -fx-background-color: #231f1f;
+}
+
+.label{
+    -fx-font-family: Papyrus;
+    -fx-font-size: 14;
+    -fx-text-fill: #e5d061 ;
+}
+
+.title-label{
+    -fx-font-family: Papyrus;
+    -fx-font-size: 40 ;
+    -fx-text-fill: #e5d061 ;
+}
+
+.button{
+    -fx-font-family: Papyrus;
+    -fx-font-size: 14;
+    -fx-text-fill: #e5d061 ;
+    -fx-background-color: #3d040d;
+}
+
+.menu-button{
+    -fx-font-family: Papyrus;
+    -fx-font-size: 14;
+    -fx-text-fill: #e5d061 ;
+    -fx-background-color: #3d040d;
+}
+
+.menu-item{
+    -fx-font-family: Papyrus;
+    -fx-font-size: 14;
+    -fx-text-fill: #e5d061 ;
+    -fx-background-color: #3d040d;
+}
