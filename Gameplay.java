@@ -6,8 +6,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage ;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 public class Gameplay extends Application {
 
     Stage brightAge;
