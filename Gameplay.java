@@ -12,16 +12,16 @@ public class Gameplay extends Application {
 
     Stage brightAge;
     Scene welcomeScene, skillsDescriptions, raceSelect, signSelect, nameSelect;
+    
+    String characterRace = null ;
+    String characterSign = null ;
+    String characterName = null ;
 
     public static void main(String[] args) {
         launch(args);
     }
 
     public void start(Stage primaryStage) throws Exception {
-
-        AtomicReference<String> characterRace = null ;
-        String characterSign = null ;
-        String characterName = null ;
 
         brightAge = primaryStage;
         brightAge.setTitle("BrightAge");
@@ -99,32 +99,33 @@ public class Gameplay extends Application {
         MenuItem manDescription = new MenuItem("Men are skilled in the light warrior and archery attributes.");
         MenuButton man = new MenuButton("Man", null, manDescription);
         man.setPopupSide(Side.RIGHT);
-        manDescription.setOnAction(e -> characterRace.set("Man"));
+        man.setOnMouseClicked(e -> characterRace = "Man");
 
 
         MenuItem ancientElfDescription = new MenuItem("Ancient elves are the oldest and most historic race. " +
                 "They are skilled in the magic and alchemy attributes.");
         MenuButton ancientElf = new MenuButton("Ancient Elf", null, ancientElfDescription);
         ancientElf.setPopupSide(Side.RIGHT);
-        ancientElfDescription.setOnAction(e -> characterRace.set("Ancient Elf"));
+        ancientElf.setOnMouseClicked(e -> characterRace = "Ancient Elf");
 
 
         MenuItem woodElfDescription = new MenuItem("Wood elves are the descendants of men and ancient elves. " +
                 "They are skilled in the archery and alchemy attributes.");
         MenuButton woodElf = new MenuButton("Wood Elf", null, woodElfDescription);
         woodElf.setPopupSide(Side.RIGHT);
-        woodElfDescription.setOnAction(e -> characterRace.set("Wood Elf"));
+        woodElf.setOnMouseClicked(e -> characterRace = "Wood Elf");
 
         MenuItem dwarfDescription = new MenuItem("Dwarves are mountain dwellers skilled in the heavy warrior and smithing arttributes.");
         MenuButton dwarf = new MenuButton("Dwarf", null, dwarfDescription);
         dwarf.setPopupSide(Side.RIGHT);
-        dwarfDescription.setOnAction(e -> characterRace.set("Dwarf"));
+        dwarf.setOnMouseClicked(e -> characterRace = "Dwarf");
 
         MenuItem orcDescription = new MenuItem("Orcs are skilled in the heavy warrior and light warrior attributes.");
         MenuButton orc = new MenuButton("Orc", null, orcDescription);
         orc.setPopupSide(Side.RIGHT);
-        orcDescription.setOnAction(e -> characterRace.set("Orc"));
+        orc.setOnMouseClicked(e -> characterRace = "Orc");
 
+        
         VBox raceSelectMenu = new VBox(60, man, ancientElf, woodElf, dwarf, orc);
 
         BorderPane raceSelectPane = new BorderPane();
@@ -151,42 +152,42 @@ public class Gameplay extends Application {
                 " the light warrior attribute.") ;
         MenuButton bodyguard = new MenuButton("Bodyguard", null, bodyguardDescription) ;
         bodyguard.setPopupSide(Side.RIGHT);
-        bodyguardDescription.setOnAction(e -> characterSign.equals("Bodyguard"));
+        bodyguard.setOnMouseClicked(e -> characterSign = "Bodygyard");
 
 
         MenuItem warriorDescription = new MenuItem("Those born under the sign of the Warrior are additionally skilled in" +
                 " the heavy warrior attribute.") ;
         MenuButton warrior = new MenuButton("Warrior", null, warriorDescription) ;
         warrior.setPopupSide(Side.RIGHT);
-        warriorDescription.setOnAction(e -> characterSign.equals("Warrior"));
+        warrior.setOnMouseClicked(e -> characterSign = "Warrior");
 
 
         MenuItem hunterDescription = new MenuItem ("Those born under the sign of the Hunter are additionally skilled in" +
                 " the Archery attribute.") ;
         MenuButton hunter = new MenuButton("Hunter", null, hunterDescription) ;
         hunter.setPopupSide(Side.RIGHT);
-        hunterDescription.setOnAction(e -> characterSign.equals("Hunter"));
+        hunter.setOnMouseClicked(e -> characterSign = "Hunter");
 
 
         MenuItem craftsmanDescription = new MenuItem("Those born under the sign of the Craftsman are additionally skilled in" +
                 " the Smith attribute.") ;
         MenuButton craftsman = new MenuButton("Craftsman", null, craftsmanDescription) ;
         craftsman.setPopupSide(Side.RIGHT);
-        craftsmanDescription.setOnAction(e -> characterSign.equals("Craftsman"));
+        craftsman.setOnMouseClicked(e -> characterSign = "Craftsman");
 
 
         MenuItem mageDescription = new MenuItem("Those born under the sign of the Mage are additionally skilled in" +
                 " the Mage attribute.") ;
         MenuButton mage = new MenuButton("Mage", null, mageDescription) ;
         mage.setPopupSide(Side.RIGHT);
-        mageDescription.setOnAction(e -> characterSign.equals("Mage"));
+        mage.setOnMouseClicked(e -> characterSign = "Mage");
 
 
         MenuItem scholarDescription = new MenuItem("Those born under the sign of the Scholar are additionally skilled in" +
                 " the Alchemy attribute.") ;
         MenuButton scholar = new MenuButton("Scholar", null, scholarDescription) ;
         scholar.setPopupSide(Side.RIGHT);
-        scholarDescription.setOnAction(e -> characterSign.equals("Scholar"));
+        scholar.setOnMouseClicked(e -> characterSign = "Scholar");
 
 
         VBox signSelectMenu = new VBox(40, bodyguard, warrior, hunter, craftsman, mage, scholar);
@@ -214,7 +215,7 @@ public class Gameplay extends Application {
         nameInput.setPrefWidth(200);
 
         Button setName = new Button("Set Name");
-        setName.setOnAction(e -> characterName.equals(nameInput.getText()));
+        setName.setOnMouseClicked(e -> characterName = nameInput.getText());
 
         VBox nameSelectComponents = new VBox(nameLabel, nameInput, setName) ;
 
